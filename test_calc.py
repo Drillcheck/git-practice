@@ -1,0 +1,12 @@
+import unittest
+
+from calc import total
+
+
+class TotalTest(unittest.TestCase):
+    def test_two_dishes(self):
+        self.assertEqual(total({"bibimbap": 1, "barley tea": 2}), 13.5)
+
+
+if __name__ == "__main__":
+    unittest.main()
