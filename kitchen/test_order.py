@@ -1,6 +1,6 @@
 import unittest
 
-from calc import total
+from kitchen.order import total
 
 
 class TotalTest(unittest.TestCase):
