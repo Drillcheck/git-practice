@@ -3,4 +3,5 @@ MENU = {
     "bibimbap": 10.5,
     "tteokbokki": 7.0,
     "barley tea": 1.5,
+    "kimbap": 4.5,
 }
