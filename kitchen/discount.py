@@ -1,4 +1,4 @@
-RATE = 0.10
+RATE = 0.15
 
 
 def discount(amount, hour):

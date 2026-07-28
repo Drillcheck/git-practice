@@ -5,7 +5,7 @@ from kitchen.discount import discount
 
 class DiscountTest(unittest.TestCase):
     def test_lunch(self):
-        self.assertEqual(discount(20.0, 12), 2.0)
+        self.assertEqual(discount(20.0, 12), 3.0)
 
     def test_dinner(self):
         self.assertEqual(discount(20.0, 19), 0.0)

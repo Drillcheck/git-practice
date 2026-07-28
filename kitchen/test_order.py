@@ -8,7 +8,7 @@ class TotalTest(unittest.TestCase):
         self.assertEqual(total({"bibimbap": 1, "barley tea": 2}), 13.5)
 
     def test_lunch_total(self):
-        self.assertEqual(total_at({"bibimbap": 2}, 12), 18.9)
+        self.assertEqual(total_at({"bibimbap": 2}, 12), 17.85)
 
 
 if __name__ == "__main__":
