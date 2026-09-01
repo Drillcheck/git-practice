@@ -10,6 +10,9 @@ class TotalTest(unittest.TestCase):
     def test_lunch_total(self):
         self.assertEqual(total_at({"bibimbap": 2}, 12), 17.85)
 
+    def test_empty_order(self):
+        self.assertEqual(total({}), 0.0)
+
 
 if __name__ == "__main__":
     unittest.main()
