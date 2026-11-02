@@ -1,0 +1,17 @@
+{
+  "m01": {
+    "base": "5c4917989d2f56c6c2bcace5e2d98c0054194e2b"
+  },
+  "m02": {
+    "base": "0f7202d4e56455b08e5efef1386a4854862b3f06",
+    "base_parent": "1dff077c0e945182ab7e71b9ec930fb1e230bd4d"
+  },
+  "m03": {
+    "base": "76e2e8ddfc68c493587abb923260c89232596c42",
+    "base_parent": "25b93caccb508f9aafbd7caefa13a41791c5a1b3"
+  },
+  "m04": {
+    "base": "64e665dadc6ec45e098221d228f72d7a2225e322",
+    "teammate": "23cb9bcca4ec5c0a04aabe9ce0891de540e31daa"
+  }
+}
