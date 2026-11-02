@@ -1,5 +1,7 @@
 from kitchen.menu import MENU
+from kitchen import tax
 
 
 def total(items):
-    return sum(MENU[name] * qty for name, qty in items.items())
+    subtotal = sum(MENU[name] * qty for name, qty in items.items())
+    return tax.apply(subtotal)
