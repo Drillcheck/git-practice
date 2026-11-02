@@ -1,0 +1,29 @@
+name: check
+
+# Grades a pull request against this mission branch.
+# The learner's code is never run: the grader comes from `main` of this
+# repository, and the pull request commits are fetched as data only.
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Fetch the pull request commits
+        env:
+          PR: ${{ github.event.pull_request.number }}
+        run: git fetch --no-tags origin "+refs/pull/${PR}/head:refs/remotes/pr/head"
+      - name: Grade
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: python3 check/check.py --mission "${BASE_REF#mission/}" --head pr/head --main-ref HEAD
