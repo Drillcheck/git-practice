@@ -1,0 +1,16 @@
+#!/bin/sh
+# 이 브랜치의 미션을 채점합니다. 사용법: ./check
+# 채점기는 main 브랜치에서 가져옵니다. 이 파일을 고쳐도 PR 채점 결과는 바뀌지 않습니다.
+main=""
+for ref in upstream/main origin/main main; do
+  if git rev-parse -q --verify "$ref^{commit}" >/dev/null; then main=$ref; break; fi
+done
+if [ -z "$main" ]; then
+  echo "main 브랜치를 찾을 수 없습니다. 먼저 git fetch origin main 을 실행하세요."
+  exit 2
+fi
+py=python3
+command -v python3 >/dev/null 2>&1 || py=python
+gitdir=$(git rev-parse --git-dir) || exit 2
+git show "$main:check/check.py" > "$gitdir/drillcheck-check.py" || exit 2
+exec "$py" "$gitdir/drillcheck-check.py" --mission m03 --head HEAD --main-ref "$main"
